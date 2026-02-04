@@ -30,29 +30,57 @@
 
 <section id="planos" class="planos">
     <h2>Nossos Planos</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>200MB</h3>
-            <span class="tech">Fibra Óptica</span>
-            <p class="preco">R$ 80,00<span>/mês</span></p>
+    
+    <div class="tabs">
+        <button class="tab-btn active" onclick="openTab(event, 'fibra')">Internet Fibra</button>
+        <button class="tab-btn" onclick="openTab(event, 'movel')">Telefonia Móvel</button>
+        <button class="tab-btn" onclick="openTab(event, 'fixo')">Telefonia Fixa</button>
+    </div>
+
+    <div id="fibra" class="tab-content active">
+        <div class="cards">
+            <div class="card"><h3>200MB</h3><p class="preco">R$ 80,00<span>/mês</span></p></div>
+            <div class="card"><h3>400MB</h3><p class="preco">R$ 100,00<span>/mês</span></p></div>
+            <div class="card"><h3>600MB</h3><p class="preco">R$ 120,00<span>/mês</span></p></div>
+            <div class="card destaque"><div class="badge">WiFi6</div><h3>800MB</h3><p class="preco">R$ 160,00<span>/mês</span></p></div>
         </div>
-        <div class="card destaque"> <div class="badge">Mais Popular</div>
-            <h3>400MB</h3>
-            <span class="tech">Fibra Óptica</span>
-            <p class="preco">R$ 100,00<span>/mês</span></p>
+        <p class="info-extra">*upload e download simétricos.</p>
+    </div>
+
+    <div id="movel" class="tab-content">
+        <div class="cards">
+            <div class="card"><h3>9GB Plus</h3><p>Plano de 3GB com 1GB de bonus mais 5GB pela portabilidade.</p><p class="preco">R$ 49,90<span>/mês</span></p></div>
+            <div class="card"><h3>12GB Plus</h3><p>Plano de 6GB com 1GB de bonus mais 5GB pela portabilidade.</p><p class="preco">R$ 54,90<span>/mês</span></p></div>
+            <div class="card"><h3>17GB Plus</h3><p>Plano de 10GB com 2GB de bonus mais 5GB pela portabilidade.</p><p class="preco">R$ 64,90<span>/mês</span></p></div>
+            <div class="card"><h3>25GB Plus</h3><p>Plano de 18GB com 2GB de bonus mais 5GB pela portabilidade.</p><p class="preco">R$ 74,90<span>/mês</span></p></div>
+            <div class="card"><h3>47GB Plus</h3><p>Plano de 40GB com 2GB de bonus mais 5GB pela portabilidade.</p><p class="preco">R$ 94,90<span>/mês</span></p></div>
         </div>
-        <div class="card">
-            <h3>600MB</h3>
-            <span class="tech">Fibra Óptica</span>
-            <p class="preco">R$ 120,00<span>/mês</span></p>
+        <p class="info-extra">*Ativação na hora, cobertura nacional, sem fidelidade e franquia acumulativa.</p>
+    </div>
+
+    <div id="fixo" class="tab-content">
+        <div class="cards">
+            <div class="card"><h4>Fixo 100 Min.</h4><p>100 min p/ Fixo Brasil</p><br><p class="preco">R$ 19,90<span>/mês</span></p></div>
+            <div class="card"><h4>Fixo Ilim.</h4><p>Ilimitado p/ Fixo Brasil</p><br><p class="preco">R$ 35,00<span>/mês</span></p></div>
+            <div class="card"><h4>Fixo + 50 Min Cel</h4><p>Fixo Ilim. + 50 Min. Celular</p><p class="preco">R$ 59,90<span>/mês</span></p></div>
+            <div class="card"><h4>Fixo + Celular</h4><p>Fixo Ilim. + Celular Ilim.</p><br><p class="preco">R$ 59,90<span>/mês</span></p></div>
         </div>
-        <div class="card">
-            <h3>800MB</h3>
-            <span class="tech">Fibra Óptica</span>
-            <p class="preco">R$ 160,00<span>/mês</span></p>
-        </div>
+        <p class="info-extra">*Exclusivo para clientes Fibra em fatura única.</p>
     </div>
 </section>
+
+<script>
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; tabcontent[i].classList.remove("active"); }
+    tablinks = document.getElementsByClassName("tab-btn");
+    for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
+    document.getElementById(tabName).style.display = "block";
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.className += " active";
+}
+</script>
 
 <section id="servicos" class="servicos">
     <div class="container-servicos">
@@ -88,4 +116,3 @@
 
 </body>
 </html>
-
